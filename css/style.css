@@ -1,0 +1,197 @@
+.modes-container,
+.game-container {
+    justify-content: flex-start;
+}
+
+
+.main-game-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.game-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* GIF columns */
+.gif-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    align-self: flex-start;
+}
+
+.gif-column .gif-img {
+    width: 19rem;
+    height: 19rem;
+}
+
+
+.left-gifs {
+    align-items: flex-start;
+    width: 33.33%;
+}
+
+.right-gifs {
+    align-items: flex-end;
+    width: 33.33%;
+}
+
+.gif-img {
+    max-width: 20rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+}
+
+@media (max-width: 1500px) {
+    .gif-column {
+        width: 200px;
+    }
+    .gif-img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .gif-column {
+        display: none;
+    }
+    .gif-container {
+        display: none;
+    }
+    .game-content {
+        max-width: 100%;
+    }
+}
+
+.page-content,
+.game-container,
+.welcome-content,
+.mode-selection,
+.modes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-container .board {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.game-container .row {
+    display: flex;
+    gap: 4px;
+}
+
+.game-container .cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.game-container .grid-cell {
+    background-color: #d777f5;
+    border-color: #333;
+}
+
+.modes-container,
+.modeBtn,
+.thing-text,
+.gif-container,
+.reset-buttons-container,
+.options-container,
+.modes-container {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.thing-text,
+.welcome-content,
+.modeBtn {
+    font-size: x-large;
+}
+
+.modeBtn {
+    width: 15rem;
+}
+
+.gameBtn,
+.resetBtn {
+    margin-right: 0.4rem;
+}
+
+/* lol pulse effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.selected {
+    animation: pulse 1.5s infinite;
+}
+
+.gradient-pulse-text {
+    font-size: 3rem;
+    font-weight: bold;
+
+    /* Rainbow gradient background */
+    background: linear-gradient(to right,
+            #ff0000, #ff7f00, #ffff00,
+            #00ff00, #0000ff, #4b0082, #9400d3);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    /* Pulse animation */
+    animation:
+        rainbow 8s linear infinite,
+        rainbow-pulse 2s ease-in-out infinite;
+}
+
+/* Rainbow color shift */
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Opacity pulse effect */
+@keyframes rainbow-pulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
